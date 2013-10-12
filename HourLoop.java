@@ -23,8 +23,8 @@ public class HourLoop {
     }
 
     public void hourlyEvents(int hour){
-        int solar_position=Sun.getPosition(hour);
+        Coordinate solar_position=Sun.getPosition(hour);
 
-        System.out.println("Hour: "+hour+" Sun Position: "+solar_position);
+        System.out.println("Hour: "+hour+" Sun Position: "+solar_position.x);
     }
 }

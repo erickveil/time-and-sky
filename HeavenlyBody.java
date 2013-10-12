@@ -1,16 +1,11 @@
 /**
- * Created with IntelliJ IDEA.
- * User: alienpriest
- * Date: 10/11/13
- * Time: 3:17 PM
- *
- * The sun starts its day at 0 degrees in the east at about 8:00 am. It sets
- * in the west at 180 degrees at about 8:00 pm.
- *
- * It is the simplest heavenly body, with no indication of its position on
- * the parallels.
+ * PACKAGE_NAME
+ * User: eveil
+ * Date: 10/12/13
+ * Time: 1:22 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class Sun {
+public class HeavenlyBody {
 
     public static float slope=0;
     public static int speed=15;
