@@ -1,25 +1,36 @@
 /**
- * PACKAGE_NAME
+ * HeavenlyBody
  * User: eveil
  * Date: 10/12/13
  * Time: 1:22 PM
- * To change this template use File | Settings | File Templates.
+ *
+ * The template/parent of all heavenly bodies and how they move across the sky.
+ * Children should define slope and speed.
  */
 public class HeavenlyBody {
 
+    // rise over run: y/x
     public static float slope=0;
-    public static int speed=15;
+    // Degrees x per hour: x/h
+    public static int speed=0;
 
 
+    /**
+     * Given the time of day, calculates the position of a straight line
+     * traveling HeavenlyBody
+     * @param hour The current hour of the day
+     * @return Position coordinates
+     * TODO: Learn about Java inheritance. How to use the child's static properties instead of the Parent.
+     */
     public static Coordinate getPosition(int hour){
 
         Coordinate position=new Coordinate();
 
         // EW movement is 18 degrees every hour.
-        int x = (hour*Moon.speed);
+        int x = (hour*speed);
         x=wrap360(x);
 
-        int y=x*(int)Moon.slope;
+        int y=x*(int)slope;
 
         position.x=x;
         position.y=y;
