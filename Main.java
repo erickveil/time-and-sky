@@ -10,8 +10,9 @@ public class Main {
     public static void main(String [] args){
 
         DayLoop allTime = new DayLoop();
+        Sky heavens=new Sky();
 
-        allTime.runDay();
+        allTime.runDay(heavens);
 
     }
 }

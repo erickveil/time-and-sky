@@ -9,20 +9,28 @@
  */
 public class HeavenlyBody {
 
-    // rise over run: y/x
-    public static float slope=0;
-    // Degrees x per hour: x/h
-    public static int speed=0;
+    public String name="";
 
+    // rise over run: y/x
+    public float slope=0;
+    // Degrees x per hour: x/h
+    public int speed=0;
+
+    public Coordinate loc=new Coordinate(0,0);
+
+    public HeavenlyBody(String body_name,int body_speed,float body_slope){
+        name=body_name;
+        speed=body_speed;
+        slope=body_slope;
+    }
 
     /**
      * Given the time of day, calculates the position of a straight line
      * traveling HeavenlyBody
      * @param hour The current hour of the day
      * @return Position coordinates
-     * TODO: Learn about Java inheritance. How to use the child's static properties instead of the Parent.
      */
-    public static Coordinate getPosition(int hour){
+    public Coordinate getPosition(int hour){
 
         Coordinate position=new Coordinate();
 
@@ -36,6 +44,10 @@ public class HeavenlyBody {
         position.y=y;
 
         return position;
+    }
+
+    public void setPosition(int hour){
+        loc=this.getPosition(hour);
     }
 
     /**

@@ -8,12 +8,12 @@
  */
 public class HourLoop {
 
-    public void runHour(){
+    public void runHour(Sky heavens){
         long length=400;
 
         for(int hour=0;hour<24;++hour)
         {
-            hourlyEvents(hour);
+            hourlyEvents(hour,heavens);
             try{
                 Thread.sleep(length);
             }catch(InterruptedException ex){
@@ -22,9 +22,7 @@ public class HourLoop {
         }
     }
 
-    public void hourlyEvents(int hour){
-        Coordinate solar_position=Sun.getPosition(hour);
-
-        System.out.println("Hour: "+hour+" Sun Position: "+solar_position.x);
+    public void hourlyEvents(int hour, Sky heavens){
+        heavens.calcAllPositions(hour);
     }
 }

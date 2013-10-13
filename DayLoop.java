@@ -11,14 +11,14 @@ public class DayLoop {
     public int day=0;
     public HourLoop currentHour=new HourLoop();
 
-    public void runDay(){
+    public void runDay(Sky heavens){
         //long length=4000;
 
         while(true){
             ++day;
             System.out.println("Day: "+day);
 
-            currentHour.runHour();
+            currentHour.runHour(heavens);
 
             /*
             try{
