@@ -12,16 +12,18 @@ public class HeavenlyBody {
     public String name="";
 
     // rise over run: y/x
-    public float slope=0;
+    public double slope=0;
     // Degrees x per hour: x/h
     public int speed=0;
 
     public Coordinate loc=new Coordinate(0,0);
 
-    public HeavenlyBody(String body_name,int body_speed,float body_slope){
+    public HeavenlyBody(String body_name,int body_speed, double body_slope){
         name=body_name;
         speed=body_speed;
         slope=body_slope;
+
+        System.out.println(name+": slope:"+(int)slope);
     }
 
     /**
@@ -38,7 +40,7 @@ public class HeavenlyBody {
         int x = (hour*speed);
         x=wrap360(x);
 
-        int y=x*(int)slope;
+        int y=(int)(x*slope);
 
         position.x=x;
         position.y=y;
