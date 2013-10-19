@@ -18,18 +18,26 @@ public class HeavenlyBody {
     // Degrees x per hour: x/h
     public int speed=0;
 
-    public Coordinate loc=new Coordinate(0,0);
+    public Coordinate loc=new Coordinate();
+    public Coordinate starting_loc=new Coordinate();
 
     public HeavenlyBody(String body_name, Coordinate start, int body_speed, double body_slope){
         name=body_name;
         speed=body_speed;
         slope=body_slope;
+        starting_loc=start;
     }
 
+    /**
+     * Generates a body with random starting stats
+     * @param body_name string name of the body
+     * @param generator Random The seeded RNG
+     */
     public HeavenlyBody(String body_name, Random generator){
         name=body_name;
         speed=generator.nextInt(10)+1;
         slope=generator.nextDouble();
+        starting_loc=new Coordinate(generator);
     }
 
     /**
@@ -44,9 +52,9 @@ public class HeavenlyBody {
 
         // EW movement is 18 degrees every hour.
         int x = (hour*speed);
-        x=wrap360(x);
+        x=wrap360(x)+starting_loc.x;
 
-        int y=(int)(x*slope);
+        int y=(int)(x*slope)+starting_loc.y;
         y=wrap360(y);
 
         position.x=x;

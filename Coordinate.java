@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * PACKAGE_NAME
  * User: eveil
@@ -17,5 +19,10 @@ public class Coordinate {
     public Coordinate(){
         this.x=0;
         this.y=0;
+    }
+
+    public Coordinate(Random generator){
+        this.x=generator.nextInt(360);
+        this.y=generator.nextInt(360);
     }
 }
