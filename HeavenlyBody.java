@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * HeavenlyBody
  * User: eveil
@@ -18,12 +20,16 @@ public class HeavenlyBody {
 
     public Coordinate loc=new Coordinate(0,0);
 
-    public HeavenlyBody(String body_name,int body_speed, double body_slope){
+    public HeavenlyBody(String body_name, Coordinate start, int body_speed, double body_slope){
         name=body_name;
         speed=body_speed;
         slope=body_slope;
+    }
 
-        System.out.println(name+": slope:"+(int)slope);
+    public HeavenlyBody(String body_name, Random generator){
+        name=body_name;
+        speed=generator.nextInt(10)+1;
+        slope=generator.nextDouble();
     }
 
     /**
@@ -41,6 +47,7 @@ public class HeavenlyBody {
         x=wrap360(x);
 
         int y=(int)(x*slope);
+        y=wrap360(y);
 
         position.x=x;
         position.y=y;

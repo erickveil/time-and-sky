@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Created with IntelliJ IDEA.
  * User: alienpriest
@@ -9,8 +11,11 @@
 public class Main {
     public static void main(String [] args){
 
+        long random_seed=System.currentTimeMillis();
+        Random generator=new Random(random_seed);
+
         DayLoop allTime = new DayLoop();
-        Sky heavens=new Sky();
+        Sky heavens=new Sky(generator);
 
         allTime.runDay(heavens);
 

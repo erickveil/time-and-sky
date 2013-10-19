@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Sky.java
@@ -11,10 +12,11 @@ import java.util.Map;
  */
 public class Sky {
     Map<String, HeavenlyBody> sky_bodies = new HashMap<String, HeavenlyBody>();
+    double slope=1/(double)30;
 
-    public Sky(){
-        sky_bodies.put("Sun", new HeavenlyBody("Sun", 15, 0));
-        sky_bodies.put("Moon", new HeavenlyBody("Moon", 18, 1/30 ));
+    public Sky(Random generator){
+        sky_bodies.put("Sun", new HeavenlyBody("Sun", generator));
+        sky_bodies.put("Moon", new HeavenlyBody("Moon", generator));
     }
 
     /**
