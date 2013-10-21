@@ -14,10 +14,13 @@ public class Main {
         long random_seed=System.currentTimeMillis();
         Random generator=new Random(random_seed);
 
+        MainWindow win = new MainWindow();
+        win.createAndShowGUI();
+
         DayLoop allTime = new DayLoop();
         Sky heavens=new Sky(generator);
 
-        allTime.runDay(heavens);
+        //allTime.runDay(heavens);
 
     }
 }
