@@ -27,6 +27,9 @@ public class Star {
     public void draw(Graphics2D g2d, int w, int h){
 
         g2d.setColor(Color.WHITE);
-        g2d.fillOval(5,5,w/2,h/2);
+        g2d.fillOval(5,5,500,500);
+
+        g2d.setColor(Color.BLUE);
+        g2d.fillOval(100,100,300,300);
     }
 }

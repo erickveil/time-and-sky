@@ -108,12 +108,12 @@ public class MainWindow {
                 // I am guessing that they are getting W and H of the JPanel.
                 // Whatever we set the panel to, this object will fit it.
 
-                star_test.draw(g2d,getWidth(),getHeight());
+                //star_test.draw(g2d,getWidth(),getHeight());
 
                 // Setting the w,h values to explicit numbers seems to create
                 // a fixed size ellipse. Unlike getWidth, etc,
                 // The circle does not stretch with the window size.
-                //star_test.draw(g2d,600,600);
+                star_test.draw(g2d,100,100);
             }
 
             // When this block is commented out, the default getPreferredSize
